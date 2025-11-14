@@ -1,0 +1,8 @@
+IP Wizard is a lightweight and easy-to-use Android application designed to help users quickly calculate subnet masks and IP ranges. Whether you're a networking student, IT professional, or simply curious about how IP addressing works, IP Wizard provides a simple interface for entering IP addresses and subnet information, instantly generating the relevant network details.
+
+Features:
+
+- Calculate subnet masks and IP ranges for IPv4 addresses
+- User-friendly, mobile-friendly interface
+- Ideal for learning, troubleshooting, and everyday network calculations
+- Get your network details fast and efficiently, all from your Android device.
