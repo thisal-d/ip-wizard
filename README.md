@@ -1,8 +1,13 @@
-# IP Wizard
+<h1>
+  IP Wizard
+  <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" width="60" style="vertical-align: middle; margin-left: 6px;" />
+</h1>
+
+
 
 **calculate subnet masks and IP ranges on your Android device....**
 
- <a href="https://drive.google.com/file/d/1pdjX-uNBWMVbCVGPXBlTcFoiGPi1sywL/view?usp=drive_link"> **Download .apk for Android** </a>
+ <a href="https://drive.google.com/file/d/1pdjX-uNBWMVbCVGPXBlTcFoiGPi1sywL/view?usp=drive_link">  **Download .apk for Android** </a>
 
 ---
 
@@ -18,7 +23,7 @@
 
 **Light theme**
 
-![3](https://github.com/Thisal-D/IP-Wizard/assets/93121062/6707b0ef-51d2-4c0d-8b80-e9272d584532)     ![4](https://github.com/Thisal-D/IP-Wizard/assets/93121062/a5d8f3c2-9a1f-48a5-a09c-1056c3908e33)
+![2](https://github.com/Thisal-D/IP-Wizard/assets/93121062/6707b0ef-51d2-4c0d-8b80-e9272d584532)     ![4](https://github.com/Thisal-D/IP-Wizard/assets/93121062/a5d8f3c2-9a1f-48a5-a09c-1056c3908e33)
 
 ---
 
@@ -32,7 +37,7 @@
 2. **Open the Project in Android Studio:**
     - Launch Android Studio.
     - Select "Open an existing Android Studio project".
-    - Navigate to the `IP-Wizard` folder and open it.
+    - Navigate to the `io-wizard` folder and open it.
 
 3. **Build the Project:**
     - Go to **Build** > **Make Project** or press **Ctrl+F9**.
@@ -46,4 +51,4 @@
 
 ## Contributors
 
-- [<img src="https://github.com/solidsman.png?size=25" width="25">](https://github.com/solidsman) [Abishak](https://github.com/solidsman)
+- [<img src="https://github.com/solid-ninja.png?size=25" width="25">](https://github.com/solid-ninja) [Abishak](https://github.com/solid-ninja)

@@ -15,71 +15,56 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-
 public class SettingsActivity extends AppCompatActivity {
-    ImageButton back_btn;
-    Button save_btn;
-    EditText ip_range_count_input_text;
-    TextWatcher ip_range_count_input_text_watcher;
-
-    String ip_range_count, old_ip_range_count;
+    ImageButton backBtn;
+    Button saveBtn;
+    EditText ipRangeCountInputText;
+    TextWatcher ipRangeCountInputTextWatcher;
+    String ipRangeCount, oldIpRangeCount;
     String SETTINGS_DIRECTORY, SETTINGS_FILE_NAME;
 
-
-    public  String get_ip_ranges_display_count(){
-        try{
-            File settings_file = new File(SETTINGS_DIRECTORY,SETTINGS_FILE_NAME);
-            //checking files is not exists and then create new file
-            // write 100 & return 100 because 100 is the default i suggest
-            if (!settings_file.exists()){
-                settings_file.createNewFile();
-                FileWriter settings_file_writer = new FileWriter(settings_file);
-                settings_file_writer.write("100");
-                settings_file_writer.close();
+    public String getIpRangesDisplayCount() {
+        try {
+            File settingsFile = new File(SETTINGS_DIRECTORY, SETTINGS_FILE_NAME);
+            if (!settingsFile.exists()) {
+                settingsFile.createNewFile();
+                FileWriter settingsFileWriter = new FileWriter(settingsFile);
+                settingsFileWriter.write("100");
+                settingsFileWriter.close();
                 return "100";
+            } else {
+                Scanner settingsFileReader = new Scanner(settingsFile);
+                return settingsFileReader.nextLine();
             }
-            else{
-                Scanner settings_file_reader = new Scanner(settings_file);
-                return settings_file_reader.nextLine();
-            }
-
-        }
-        catch (Exception e){
-            //System.out.println("ERROR : "+e);
+        } catch (Exception e) {
             return "100";
         }
     }
 
-    public void save_settings(){
-        ip_range_count = ip_range_count_input_text.getText().toString();
-        try{
-            //checking files is not exists and then create new file
-            //System.out.println("DIRECTORY : "+settings_path);
-            //read ol
-            File settings_file = new File(SETTINGS_DIRECTORY,SETTINGS_FILE_NAME);
-            if (!ip_range_count.equals(old_ip_range_count)){
-                FileWriter settings_file_writer = new FileWriter(settings_file);
-                settings_file_writer.write(ip_range_count);
-                settings_file_writer.close();
+    public void saveSettings() {
+        ipRangeCount = ipRangeCountInputText.getText().toString();
+        try {
+            File settingsFile = new File(SETTINGS_DIRECTORY, SETTINGS_FILE_NAME);
+            if (!ipRangeCount.equals(oldIpRangeCount)) {
+                FileWriter settingsFileWriter = new FileWriter(settingsFile);
+                settingsFileWriter.write(ipRangeCount);
+                settingsFileWriter.close();
                 restart();
-            }
-            else{
+            } else {
                 back();
             }
-        }
-        catch (Exception e){
-            //System.out.println("ERROR : "+e);
+        } catch (Exception e) {
         }
     }
 
-    public void restart(){
+    public void restart() {
         Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }
 
-    public void back(){
+    public void back() {
         onBackPressed();
     }
 
@@ -88,49 +73,45 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        back_btn = findViewById(R.id.backButton);
-        save_btn = findViewById(R.id.saveButton);
-        ip_range_count_input_text = findViewById(R.id.ipRangesCountInputText);
+        backBtn = findViewById(R.id.backButton);
+        saveBtn = findViewById(R.id.saveButton);
+        ipRangeCountInputText = findViewById(R.id.ipRangesCountInputText);
 
         SETTINGS_DIRECTORY = getFilesDir().toString();
         SETTINGS_FILE_NAME = "settings.txt";
 
-        old_ip_range_count = get_ip_ranges_display_count();
-        ip_range_count_input_text.setText(get_ip_ranges_display_count());
+        oldIpRangeCount = getIpRangesDisplayCount();
+        ipRangeCountInputText.setText(getIpRangesDisplayCount());
 
-        back_btn.setOnClickListener(new View.OnClickListener() {
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 back();
             }
         });
 
-
-        save_btn.setOnClickListener(new View.OnClickListener() {
+        saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                save_settings();
+                saveSettings();
             }
         });
 
-
-        ip_range_count_input_text_watcher = new TextWatcher() {
+        ipRangeCountInputTextWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-                save_btn.setEnabled(Valid.is_valid_ip_range_count(ip_range_count_input_text.getText().toString()));
+                saveBtn.setEnabled(Valid.isValidIpRangeCount(ipRangeCountInputText.getText().toString()));
             }
         };
 
-        ip_range_count_input_text.addTextChangedListener(ip_range_count_input_text_watcher);
+        ipRangeCountInputText.addTextChangedListener(ipRangeCountInputTextWatcher);
     }
 }

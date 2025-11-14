@@ -1,454 +1,325 @@
 package com.example.ipwizard20;
-
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
-
-import java.nio.file.FileSystems;
-
-
+import java.util.Objects;
 
 public class Calculate {
 
-    public static  String get_formatted_address_by_class(String address, String ip_class){
-        String[] split_ip =  Valid.split(address,'.',4);
-        String formatted_address = "";
+    public static String getFormattedAddressByClass(String address, String ipClass) {
+        String[] splitIp = Valid.split(address, '.', 4);
+        StringBuilder formattedAddress = new StringBuilder();
         Integer end = 0;
-        if (ip_class=="C") end=3;
-        if (ip_class=="B") end=2;
-        if (ip_class=="A") end=1;
-        for (Integer i=0; i<end; i++){
-            formatted_address+= Integer.parseInt(split_ip[i]) + ".";
+        if (Objects.equals(ipClass, "C"))
+            end = 3;
+        if (Objects.equals(ipClass, "B"))
+            end = 2;
+        if (Objects.equals(ipClass, "A"))
+            end = 1;
+        for (int i = 0; i < end; i++) {
+            formattedAddress.append(Integer.parseInt(splitIp[i])).append(".");
         }
-        formatted_address += str_multiply("0.",(4-end));
-        formatted_address =   formatted_address.substring(0,formatted_address.length()-1);
-        return  formatted_address;
+        formattedAddress.append(strMultiply("0.", (4 - end)));
+        formattedAddress = new StringBuilder(formattedAddress.substring(0, formattedAddress.length() - 1));
+        return formattedAddress.toString();
     }
 
-    public static  String get_formatted_address(String address){
-        String formatted_address = "";
-        String[] split_ip =  Valid.split(address,'.',4);
-            for (Integer i=0; i<3; i++){
-            //System.out.print(split_ip[i]+ ".");
-            formatted_address+= Integer.parseInt(split_ip[i]) + ".";
+    public static String getFormattedAddress(String address) {
+        String formattedAddress = "";
+        String[] splitIp = Valid.split(address, '.', 4);
+        for (Integer i = 0; i < 3; i++) {
+            formattedAddress += Integer.parseInt(splitIp[i]) + ".";
         }
-        //System.out.println(split_ip[3]);
-        formatted_address += String.valueOf(Integer.valueOf(split_ip[3])) ;
-        return formatted_address;
+        formattedAddress += String.valueOf(Integer.valueOf(splitIp[3]));
+        return formattedAddress;
     }
 
-    public static Integer twos_power(Integer value){
+    public static Integer twosPower(Integer value) {
         Double base = 2.0;
         Double exponent = 0.0;
-        Double total = Math.pow(base,exponent);
-        while (total.intValue() < value){
+        Double total = Math.pow(base, exponent);
+        while (total.intValue() < value) {
             exponent += 1.0;
-            total = Math.pow(base,exponent);
+            total = Math.pow(base, exponent);
         }
         return exponent.intValue();
     }
 
-    public static String str_multiply(String value,Integer multiply){
-        String multiply_value = "";
-        for (int i=0; i<multiply; i++){
-            multiply_value += value;
+    public static String strMultiply(String value, Integer multiply) {
+        String multiplyValue = "";
+        for (int i = 0; i < multiply; i++) {
+            multiplyValue += value;
         }
-        return  multiply_value;
+        return multiplyValue;
     }
 
-    public static String binary_to_decimal(String bin_val){
+    public static String binaryToDecimal(String binVal) {
         Double exponent = 2.0;
         Double power = 0.0;
-        Double decimal =  0.0;
-        for (Integer i=bin_val.length()-1; i>=0; i--){
-            decimal += Math.pow(exponent,power) * Double.valueOf(bin_val.substring(i,i+1));
+        Double decimal = 0.0;
+        for (Integer i = binVal.length() - 1; i >= 0; i--) {
+            decimal += Math.pow(exponent, power) * Double.valueOf(binVal.substring(i, i + 1));
             power += 1.0;
         }
         return String.valueOf(decimal.intValue());
     }
 
-    public static String decimal_to_binary(Integer number){
-
-        String binary_val = "";
-        while (number>0){
-            binary_val = number % 2 +  binary_val;
-            number = (int)number/2;
+    public static String decimalToBinary(Integer number) {
+        String binaryVal = "";
+        while (number > 0) {
+            binaryVal = number % 2 + binaryVal;
+            number = (int) number / 2;
         }
-        return binary_val;
+        return binaryVal;
     }
 
-
-    public static Integer generate_ip_address_count(String subnet_mask){
+    public static Integer generateIpAddressCount(String subnetMask) {
         Double exponent = 0.0;
-        for (Integer i=9; i< subnet_mask.length(); i++){
-            if (subnet_mask.charAt(i)=='0'){
+        for (Integer i = 9; i < subnetMask.length(); i++) {
+            if (subnetMask.charAt(i) == '0') {
                 exponent++;
             }
         }
-        Double ip_address_count = Math.pow(2.0,exponent);
-        return ip_address_count.intValue() ;
+        Double ipAddressCount = Math.pow(2.0, exponent);
+        return ipAddressCount.intValue();
     }
 
-    public static Integer generate_subnets_count(String subnet_mask){
+    public static Integer generateSubnetsCount(String subnetMask) {
         Double exponent = 0.0;
-        for (Integer i=9; i< subnet_mask.length(); i++){
-            if (subnet_mask.charAt(i)=='1'){
+        for (Integer i = 9; i < subnetMask.length(); i++) {
+            if (subnetMask.charAt(i) == '1') {
                 exponent++;
             }
         }
-        Double sub_nets_count = Math.pow(2.0,exponent);
-        return sub_nets_count.intValue() ;
+        Double subNetsCount = Math.pow(2.0, exponent);
+        return subNetsCount.intValue();
     }
 
-
-    public static String[][] generate_range(String subnet_mask, String ip_class, String ip_address, Integer array_size){
-        Double block_size_double = 0.0;
-        Integer block_bits = 0;
-        Integer block_get = 1;
-        Integer block_size = 0;
-        String[] subnet_values = new String[4];
-        String binary_val = "";
-        subnet_values = Valid.split(subnet_mask,'.',4);
-        for(Integer i=0; i<4; i++){
-            binary_val = decimal_to_binary(Integer.valueOf(subnet_values[i]));
-            binary_val = binary_val + str_multiply("0",8-binary_val.length());
-            for (Integer i2=0; i2<binary_val.length(); i2++){
-                if(binary_val.charAt(i2) == '0') block_bits++;
+    public static String[][] generateRange(String subnetMask, String ipClass, String ipAddress, Integer arraySize) {
+        Double blockSizeDouble = 0.0;
+        Integer blockBits = 0;
+        Integer blockGet = 1;
+        Integer blockSize = 0;
+        String[] subnetValues = new String[4];
+        String binaryVal = "";
+        subnetValues = Valid.split(subnetMask, '.', 4);
+        for (Integer i = 0; i < 4; i++) {
+            binaryVal = decimalToBinary(Integer.valueOf(subnetValues[i]));
+            binaryVal = binaryVal + strMultiply("0", 8 - binaryVal.length());
+            for (Integer i2 = 0; i2 < binaryVal.length(); i2++) {
+                if (binaryVal.charAt(i2) == '0')
+                    blockBits++;
             }
-            if (!(block_bits==0)){
+            if (!(blockBits == 0)) {
                 break;
             }
-            block_get ++;
+            blockGet++;
         }
-       
-        block_size_double =  Math.pow(2,block_bits);
-        block_size = block_size_double.intValue();
-        String[][] ip_range = new String[array_size][2];
 
-        String[] ip_address_values = Valid.split(ip_address,'.',4);
-        String start_ip = "";
-        String end_ip = "";
-        String ip_temp = "";
-        Integer index = 0 ;
-        if (ip_class.equals("C")) {
-            ip_temp = ip_address_values[0] + "." + ip_address_values[1] + "." + ip_address_values[2];
-            for (Integer ip4=0; ip4<256; ip4+=block_size){
-                if (index>=array_size)break;
-                start_ip = ip_temp + "." + ip4;
-                end_ip = ip_temp + "." + (ip4 + block_size - 1);
-                ip_range[index] = new String[]{start_ip,end_ip};
-                index ++;
+        blockSizeDouble = Math.pow(2, blockBits);
+        blockSize = blockSizeDouble.intValue();
+        String[][] ipRange = new String[arraySize][2];
+
+        String[] ipAddressValues = Valid.split(ipAddress, '.', 4);
+        String startIp = "";
+        String endIp = "";
+        String ipTemp = "";
+        Integer index = 0;
+        if (ipClass.equals("C")) {
+            ipTemp = ipAddressValues[0] + "." + ipAddressValues[1] + "." + ipAddressValues[2];
+            for (Integer ip4 = 0; ip4 < 256; ip4 += blockSize) {
+                if (index >= arraySize)
+                    break;
+                startIp = ipTemp + "." + ip4;
+                endIp = ipTemp + "." + (ip4 + blockSize - 1);
+                ipRange[index] = new String[] { startIp, endIp };
+                index++;
             }
         }
-        if (ip_class.equals("B")) {
-            ip_temp = ip_address_values[0] + "." + ip_address_values[1] ;
+        if (ipClass.equals("B")) {
+            ipTemp = ipAddressValues[0] + "." + ipAddressValues[1];
 
-            if(block_get==3){
-                for (Integer ip3=0; ip3<256; ip3+=block_size){
-                    if (index>=array_size)break;
-                    start_ip = ip_temp + "." + ip3 + "." + "0";
-                    end_ip = ip_temp + "." + (ip3 + block_size - 1) + "." + "255";
-                    ip_range[index] = new String[]{start_ip,end_ip};
-                    index ++;
+            if (blockGet == 3) {
+                for (Integer ip3 = 0; ip3 < 256; ip3 += blockSize) {
+                    if (index >= arraySize)
+                        break;
+                    startIp = ipTemp + "." + ip3 + "." + "0";
+                    endIp = ipTemp + "." + (ip3 + blockSize - 1) + "." + "255";
+                    ipRange[index] = new String[] { startIp, endIp };
+                    index++;
                 }
             }
-            if(block_get==4) {
-                for (Integer ip3=0; ip3 < 256; ip3++) {
-                    if (index>=array_size) break;
-                    for (Integer ip4=0; ip4<256 ; ip4+=block_size){
-                        if (index>=array_size) break;
-                        start_ip = ip_temp + "." + ip3 + "." + ip4;
-                        end_ip = ip_temp + "." + ip3 + "." + (ip4 + block_size - 1);
-                        ip_range[index] = new String[]{start_ip,end_ip};
-                        index ++;
+            if (blockGet == 4) {
+                for (Integer ip3 = 0; ip3 < 256; ip3++) {
+                    if (index >= arraySize)
+                        break;
+                    for (Integer ip4 = 0; ip4 < 256; ip4 += blockSize) {
+                        if (index >= arraySize)
+                            break;
+                        startIp = ipTemp + "." + ip3 + "." + ip4;
+                        endIp = ipTemp + "." + ip3 + "." + (ip4 + blockSize - 1);
+                        ipRange[index] = new String[] { startIp, endIp };
+                        index++;
                     }
                 }
             }
         }
-        if (ip_class.equals("A")){
-            ip_temp = ip_address_values[0];
-            if (block_get==2){
-                for (Integer ip2=0; ip2<256; ip2+=block_size){
-                    if (index>=array_size) break;
-                    start_ip = ip_temp + "." + ip2 + "." + "0" + "." + "0";
-                    end_ip = ip_temp + "." + (ip2 + block_size - 1) + "." + "255" + "." + "255";
-                    ip_range[index] = new String[]{start_ip,end_ip};
-                    index ++;
+        if (ipClass.equals("A")) {
+            ipTemp = ipAddressValues[0];
+            if (blockGet == 2) {
+                for (Integer ip2 = 0; ip2 < 256; ip2 += blockSize) {
+                    if (index >= arraySize)
+                        break;
+                    startIp = ipTemp + "." + ip2 + "." + "0" + "." + "0";
+                    endIp = ipTemp + "." + (ip2 + blockSize - 1) + "." + "255" + "." + "255";
+                    ipRange[index] = new String[] { startIp, endIp };
+                    index++;
                 }
             }
-            if (block_get==3){
-                for (Integer ip2=0; ip2<256; ip2++){
-                    if (index>=array_size) break;
-                    for (Integer ip3=0; ip3<256; ip3+=block_size){
-                        if (index>=array_size) break;
-                        start_ip = ip_temp + "." + ip2 + "." + ip3 + "." + "0";
-                        end_ip = ip_temp + "." + ip2 + "." + (ip3 + block_size - 1) + "." + "255";
-                        ip_range[index] = new String[]{start_ip,end_ip};
-                        index ++;
+            if (blockGet == 3) {
+                for (Integer ip2 = 0; ip2 < 256; ip2++) {
+                    if (index >= arraySize)
+                        break;
+                    for (Integer ip3 = 0; ip3 < 256; ip3 += blockSize) {
+                        if (index >= arraySize)
+                            break;
+                        startIp = ipTemp + "." + ip2 + "." + ip3 + "." + "0";
+                        endIp = ipTemp + "." + ip2 + "." + (ip3 + blockSize - 1) + "." + "255";
+                        ipRange[index] = new String[] { startIp, endIp };
+                        index++;
                     }
                 }
             }
-            if (block_get==4){
-                for (Integer ip2=0; ip2<256; ip2++){
-                    if (index>=array_size) break;
-                    for (Integer ip3=0; ip3<256; ip3++){
-                        if (index>=array_size) break;
-                        for (Integer ip4=0; ip4<256; ip4+=block_size ){
-                            if (index>=array_size) break;
-                            start_ip = ip_temp + "." + ip2 + "." + ip3 + "." + ip4;
-                            end_ip = ip_temp + "." + ip2 + "." + ip3 + "." + (ip4 + block_size - 1);
-                            ip_range[index] = new String[]{start_ip,end_ip};
-                            index ++;
+            if (blockGet == 4) {
+                for (Integer ip2 = 0; ip2 < 256; ip2++) {
+                    if (index >= arraySize)
+                        break;
+                    for (Integer ip3 = 0; ip3 < 256; ip3++) {
+                        if (index >= arraySize)
+                            break;
+                        for (Integer ip4 = 0; ip4 < 256; ip4 += blockSize) {
+                            if (index >= arraySize)
+                                break;
+                            startIp = ipTemp + "." + ip2 + "." + ip3 + "." + ip4;
+                            endIp = ipTemp + "." + ip2 + "." + ip3 + "." + (ip4 + blockSize - 1);
+                            ipRange[index] = new String[] { startIp, endIp };
+                            index++;
                         }
                     }
                 }
             }
-
         }
-        return ip_range;
+        return ipRange;
     }
 
-
-    public static Integer[] get_net_bits__host_bits(String ip_class, Integer subnets, Integer hosts){
-        Integer subnet_bits = 0;
-        Integer host_bits = 0;
-        if (ip_class.equals("C")) {
+    public static Integer[] getNetBitsHostBits(String ipClass, Integer subnets, Integer hosts) {
+        Integer subnetBits = 0;
+        Integer hostBits = 0;
+        if (ipClass.equals("C")) {
             if (!subnets.equals(-1)) {
-                subnet_bits = twos_power(subnets);
-                host_bits = 8 - subnet_bits;
+                subnetBits = twosPower(subnets);
+                hostBits = 8 - subnetBits;
             } else {
-                host_bits = twos_power(hosts);
-                subnet_bits = 8 - host_bits;
+                hostBits = twosPower(hosts);
+                subnetBits = 8 - hostBits;
+            }
+        } else if (ipClass.equals("B")) {
+            if (!subnets.equals(-1)) {
+                subnetBits = twosPower(subnets);
+                hostBits = 16 - subnetBits;
+            } else {
+                hostBits = twosPower(hosts);
+                subnetBits = 16 - hostBits;
+            }
+        } else if (ipClass.equals("A")) {
+            if (!subnets.equals(-1)) {
+                subnetBits = twosPower(subnets);
+                hostBits = 24 - subnetBits;
+            } else {
+                hostBits = twosPower(hosts);
+                subnetBits = 24 - hostBits;
             }
         }
-        else if (ip_class.equals("B")) {
-            if (!subnets.equals(-1)) {
-                subnet_bits = twos_power(subnets);
-                host_bits = 16 - subnet_bits;
-            } else {
-                host_bits = twos_power(hosts);
-                subnet_bits = 16 - host_bits;
-            }
-        }
-        else if (ip_class.equals("A")) {
-            if (!subnets.equals(-1)) {
-                subnet_bits = twos_power(subnets);
-                host_bits = 24 - subnet_bits;
-            } else {
-                host_bits = twos_power(hosts);
-                subnet_bits = 24 - host_bits;
-            }
-        }
-        Integer[] sub_host_bits = new Integer[]{subnet_bits,host_bits};
-        return sub_host_bits;
+        Integer[] subHostBits = new Integer[] { subnetBits, hostBits };
+        return subHostBits;
     }
 
-
-    public static Integer[] get_net_bits__host_bits(String subnet_mask,String ip_class){
+    public static Integer[] getNetBitsHostBits(String subnetMask, String ipClass) {
         Integer start = 0;
-        if (ip_class.equals("A")) start = 1;
-        if (ip_class.equals("B")) start = 2;
-        if (ip_class.equals("C")) start = 3;
-        String[] subnet_values = new String[4];
-        String binary_val = "";
-        Integer subnet_bits = 0;
-        Integer host_bits = 0;
-        subnet_values = Valid.split(subnet_mask,'.',4);
-        for(Integer i=start; i<4; i++){
-            binary_val = decimal_to_binary(Integer.valueOf(subnet_values[i]));
-            binary_val = binary_val + str_multiply("0",8-binary_val.length());
-            for (Integer i2=0; i2<binary_val.length(); i2++){
-                if(binary_val.charAt(i2) == '1') subnet_bits++;
-                else if(binary_val.charAt(i2) == '0') host_bits++;
+        if (ipClass.equals("A"))
+            start = 1;
+        if (ipClass.equals("B"))
+            start = 2;
+        if (ipClass.equals("C"))
+            start = 3;
+        String[] subnetValues = new String[4];
+        String binaryVal = "";
+        Integer subnetBits = 0;
+        Integer hostBits = 0;
+        subnetValues = Valid.split(subnetMask, '.', 4);
+        for (Integer i = start; i < 4; i++) {
+            binaryVal = decimalToBinary(Integer.valueOf(subnetValues[i]));
+            binaryVal = binaryVal + strMultiply("0", 8 - binaryVal.length());
+            for (Integer i2 = 0; i2 < binaryVal.length(); i2++) {
+                if (binaryVal.charAt(i2) == '1')
+                    subnetBits++;
+                else if (binaryVal.charAt(i2) == '0')
+                    hostBits++;
             }
         }
-        Integer[] sub_host_bits = new Integer[]{subnet_bits,host_bits};
-        return sub_host_bits;
+        Integer[] subHostBits = new Integer[] { subnetBits, hostBits };
+        return subHostBits;
     }
 
-
-    public static String generate_subnet_mask(String ip_class, Integer subnet_bits, Integer host_bits){
+    public static String generateSubnetMask(String ipClass, Integer subnetBits, Integer hostBits) {
         String sub1 = "255";
         String sub2 = "";
         String sub3 = "";
         String sub4 = "";
 
-        String sub2_bin, sub3_bin, sub4_bin ;
-        sub2_bin = "";
-        sub3_bin = "";
-        sub4_bin = "";
-        if (ip_class.equals("C")){
+        String sub2Bin, sub3Bin, sub4Bin;
+        sub2Bin = "";
+        sub3Bin = "";
+        sub4Bin = "";
+        if (ipClass.equals("C")) {
             sub2 = "255";
             sub3 = "255";
-            sub4_bin = str_multiply("1",subnet_bits) + str_multiply("0",host_bits);
-            sub4 = binary_to_decimal(sub4_bin);
-        }
-        else if (ip_class.equals("B")) {
+            sub4Bin = strMultiply("1", subnetBits) + strMultiply("0", hostBits);
+            sub4 = binaryToDecimal(sub4Bin);
+        } else if (ipClass.equals("B")) {
             sub2 = "255";
-            if (subnet_bits >= 8) {
-                sub3_bin = str_multiply("1", 8);
-                sub4_bin = str_multiply("1", subnet_bits - 8) + str_multiply("0", host_bits);
-                sub3 = binary_to_decimal(sub3_bin);
-                sub4 = binary_to_decimal(sub4_bin);
+            if (subnetBits >= 8) {
+                sub3Bin = strMultiply("1", 8);
+                sub4Bin = strMultiply("1", subnetBits - 8) + strMultiply("0", hostBits);
+                sub3 = binaryToDecimal(sub3Bin);
+                sub4 = binaryToDecimal(sub4Bin);
+            } else {
+                sub3Bin = strMultiply("1", subnetBits) + strMultiply("0", 8 - subnetBits);
+                sub4Bin = strMultiply("0", subnetBits);
+                sub3 = binaryToDecimal(sub3Bin);
+                sub4 = binaryToDecimal(sub4Bin);
             }
-            else {
-                sub3_bin = str_multiply("1", subnet_bits) + str_multiply("0", 8 - subnet_bits);
-                sub4_bin = str_multiply("0", subnet_bits);
-                sub3 = binary_to_decimal(sub3_bin);
-                sub4 = binary_to_decimal(sub4_bin);
-            }
-        }
-        else if (ip_class.equals("A")){
-            if (subnet_bits>=16){
-                sub2_bin = str_multiply("1", 8);
-                sub3_bin = str_multiply("1", 8);
-                sub4_bin = str_multiply("1", subnet_bits-16) + str_multiply("0",host_bits);
-                sub2 = binary_to_decimal(sub2_bin);
-                sub3 = binary_to_decimal(sub3_bin);
-                sub4 = binary_to_decimal(sub4_bin);
-            }
-            else if (subnet_bits>=8){
-                sub2_bin = str_multiply("1", 8);
-                sub3_bin = str_multiply("1",subnet_bits-8) + str_multiply("0",host_bits-8);
-                sub4_bin = str_multiply("0",8);
-                sub2 = binary_to_decimal(sub2_bin);
-                sub3 = binary_to_decimal(sub3_bin);
-                sub4 = binary_to_decimal(sub4_bin);
-            }
-            else{
-                sub2_bin = str_multiply("1",subnet_bits) + str_multiply("0",8-subnet_bits);
-                sub3_bin = str_multiply("0",8);
-                sub4_bin = str_multiply("0",8);
-                sub2 = binary_to_decimal(sub2_bin);
-                sub3 = binary_to_decimal(sub3_bin);
-                sub4 = binary_to_decimal(sub4_bin);
+        } else if (ipClass.equals("A")) {
+            if (subnetBits >= 16) {
+                sub2Bin = strMultiply("1", 8);
+                sub3Bin = strMultiply("1", 8);
+                sub4Bin = strMultiply("1", subnetBits - 16) + strMultiply("0", hostBits);
+                sub2 = binaryToDecimal(sub2Bin);
+                sub3 = binaryToDecimal(sub3Bin);
+                sub4 = binaryToDecimal(sub4Bin);
+            } else if (subnetBits >= 8) {
+                sub2Bin = strMultiply("1", 8);
+                sub3Bin = strMultiply("1", subnetBits - 8) + strMultiply("0", hostBits - 8);
+                sub4Bin = strMultiply("0", 8);
+                sub2 = binaryToDecimal(sub2Bin);
+                sub3 = binaryToDecimal(sub3Bin);
+                sub4 = binaryToDecimal(sub4Bin);
+            } else {
+                sub2Bin = strMultiply("1", subnetBits) + strMultiply("0", 8 - subnetBits);
+                sub3Bin = strMultiply("0", 8);
+                sub4Bin = strMultiply("0", 8);
+                sub2 = binaryToDecimal(sub2Bin);
+                sub3 = binaryToDecimal(sub3Bin);
+                sub4 = binaryToDecimal(sub4Bin);
             }
         }
-        return (sub1+"."+sub2+"."+sub3+"."+sub4);
+        return (sub1 + "." + sub2 + "." + sub3 + "." + sub4);
     }
-
-    /*
-    public static void generate_range_and_display(String subnet_mask, String ip_class, String ip_address, Integer array_size,
-                                                  TextView[][] ip_ranges_display_text_views, TableLayout ip_range_output_table, TableRow[] ip_ranges_display_table_rows){
-        Double block_size_double = 0.0;
-        Integer block_bits = 0;
-        Integer block_get = 1;
-        Integer block_size = 0;
-        String[] subnet_values = new String[4];
-        String binary_val = "";
-        subnet_values = Valid.split(subnet_mask,'.',4);
-        for(Integer i=0; i<4; i++){
-            binary_val = decimal_to_binary(Integer.valueOf(subnet_values[i]));
-            binary_val = binary_val + str_multiply("0",8-binary_val.length());
-            for (Integer i2=0; i2<binary_val.length(); i2++){
-                if(binary_val.charAt(i2) == '0') block_bits++;
-            }
-            if (!(block_bits==0)){
-                break;
-            }
-            block_get ++;
-        }
-       
-        block_size_double =  Math.pow(2,block_bits);
-        block_size = block_size_double.intValue();
-        //String[][] ip_range = new String[array_size][2];
-
-        String[] ip_address_values = Valid.split(ip_address,'.',4);
-        String start_ip = "";
-        String end_ip = "";
-        String ip_temp = "";
-        Integer index = 0 ;
-        if (ip_class.equals("C")) {
-            ip_temp = ip_address_values[0] + "." + ip_address_values[1] + "." + ip_address_values[2];
-            for (Integer ip4=0; ip4<256; ip4+=block_size){
-                if (index>=array_size)break;
-                start_ip = ip_temp + "." + String.valueOf(ip4);
-                end_ip = ip_temp + "." + String.valueOf(ip4+block_size-1);
-                ip_ranges_display_text_views[index][0].setText(start_ip);
-                ip_ranges_display_text_views[index][2].setText(end_ip);
-                ip_range_output_table.addView(ip_ranges_display_table_rows[index]);
-                //ip_range[index] = new String[]{start_ip,end_ip};
-                index ++;
-            }
-        }
-        if (ip_class.equals("B")) {
-            ip_temp = ip_address_values[0] + "." + ip_address_values[1] ;
-
-            if(block_get==3){
-                for (Integer ip3=0; ip3<256; ip3+=block_size){
-                    if (index>=array_size)break;
-                    start_ip = ip_temp + "." + String.valueOf(ip3) + "." + "0";
-                    end_ip = ip_temp + "." + String.valueOf(ip3+block_size-1) + "." + "255";
-                    ip_ranges_display_text_views[index][0].setText(start_ip);
-                    ip_ranges_display_text_views[index][2].setText(end_ip);
-                    ip_range_output_table.addView(ip_ranges_display_table_rows[index]);
-                    //ip_range[index] = new String[]{start_ip,end_ip};
-                    index ++;
-                }
-            }
-            if(block_get==4) {
-                for (Integer ip3=0; ip3 < 256; ip3++) {
-                    if (index>=array_size) break;
-                    for (Integer ip4=0; ip4<256 ; ip4+=block_size){
-                        if (index>=array_size) break;
-                        start_ip = ip_temp + "." + String.valueOf(ip3) + "." + String.valueOf(ip4);
-                        end_ip = ip_temp + "." + String.valueOf(ip3) + "." + String.valueOf(ip4+block_size-1);
-                        ip_ranges_display_text_views[index][0].setText(start_ip);
-                        ip_ranges_display_text_views[index][2].setText(end_ip);
-                        ip_range_output_table.addView(ip_ranges_display_table_rows[index]);
-                        //ip_range[index] = new String[]{start_ip,end_ip};
-                        index ++;
-                    }
-                }
-            }
-        }
-        if (ip_class.equals("A")){
-            ip_temp = ip_address_values[0];
-            if (block_get==2){
-                for (Integer ip2=0; ip2<256; ip2+=block_size){
-                    if (index>=array_size) break;
-                    start_ip = ip_temp + "." + String.valueOf(ip2) + "." + "0" + "." + "0";
-                    end_ip = ip_temp + "." + String.valueOf(ip2+block_size-1) + "." + "255" + "." + "255";
-                    ip_ranges_display_text_views[index][0].setText(start_ip);
-                    ip_ranges_display_text_views[index][2].setText(end_ip);
-                    ip_range_output_table.addView(ip_ranges_display_table_rows[index]);
-                    //ip_range[index] = new String[]{start_ip,end_ip};
-                    index ++;
-                }
-            }
-            if (block_get==3){
-                for (Integer ip2=0; ip2<256; ip2++){
-                    if (index>=array_size) break;
-                    for (Integer ip3=0; ip3<256; ip3+=block_size){
-                        if (index>=array_size) break;
-                        start_ip = ip_temp + "." + String.valueOf(ip2) + "." + String.valueOf(ip3) + "." + "0";
-                        end_ip = ip_temp + "." + String.valueOf(ip2) + "." + String.valueOf(ip3+block_size-1) + "." + "255";
-                        ip_ranges_display_text_views[index][0].setText(start_ip);
-                        ip_ranges_display_text_views[index][2].setText(end_ip);
-                        ip_range_output_table.addView(ip_ranges_display_table_rows[index]);
-                        //ip_range[index] = new String[]{start_ip,end_ip};
-                        index ++;
-                    }
-                }
-            }
-            if (block_get==4){
-                for (Integer ip2=0; ip2<256; ip2++){
-                    if (index>=array_size) break;
-                    for (Integer ip3=0; ip3<256; ip3++){
-                        if (index>=array_size) break;
-                        for (Integer ip4=0; ip4<256; ip4+=block_size ){
-                            if (index>=array_size) break;
-                            start_ip = ip_temp + "." + String.valueOf(ip2) + "." + String.valueOf(ip3) + "." + String.valueOf(ip4);
-                            end_ip = ip_temp + "." + String.valueOf(ip2) + "." + String.valueOf(ip3) + "." + String.valueOf(ip4+block_size-1);
-                            ip_ranges_display_text_views[index][0].setText(start_ip);
-                            ip_ranges_display_text_views[index][2].setText(end_ip);
-                            ip_range_output_table.addView(ip_ranges_display_table_rows[index]);
-                            //ip_range[index] = new String[]{start_ip,end_ip};
-                            index ++;
-                        }
-                    }
-                }
-            }
-        }
-    }*/
 }

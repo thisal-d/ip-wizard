@@ -1,198 +1,178 @@
 package com.example.ipwizard20;
 
-public class Valid{
-    public static  String[] split(String value,Character split_by, Integer size){
-        String sub_value = "";
-        Integer index = 0;
-        String[] str_split = new String[size];
-        for (Integer i=0; i<value.length(); i++) {
+public class Valid {
+    public static String[] split(String value, Character splitBy, Integer size) {
+        String subValue = "";
+        int index = 0;
+        String[] strSplit = new String[size];
+        for (int i = 0; i < value.length(); i++) {
             if (value.charAt(i) == '.') {
-                str_split[index] = sub_value;
+                strSplit[index] = subValue;
                 index++;
-                sub_value = "";
-            }
-            else {
-                sub_value += value.charAt(i);
+                subValue = "";
+            } else {
+                subValue += value.charAt(i);
             }
         }
-        str_split[index] = sub_value;
-        return  str_split;
+        strSplit[index] = subValue;
+        return strSplit;
     }
 
-    public static Boolean ip_format_is_valid(String ip_address){
-        Integer dots = 0;
-        for (Integer i=0; i<ip_address.length(); i++) {
-            if (ip_address.charAt(i)=='.') {
+    public static Boolean ipFormatIsValid(String ipAddress) {
+        int dots = 0;
+        for (int i = 0; i < ipAddress.length(); i++) {
+            if (ipAddress.charAt(i) == '.') {
                 dots++;
             }
         }
 
-        String[] ip_address_split_str = new String[4];
-        try{
-            ip_address_split_str = split(ip_address, '.',4);
-        }
-        catch (Exception e){
+        String[] ipAddressSplitStr = new String[4];
+        try {
+            ipAddressSplitStr = split(ipAddress, '.', 4);
+        } catch (Exception e) {
             return false;
         }
-        
-        Integer index=0;
-        Integer[] ip_address_split_int  = new Integer[4];
+
+        int index = 0;
+        Integer[] ipAddressSplitInt = new Integer[4];
         index = 0;
-        if (dots==3){
-            //ip_address_split_str = ip_address.split(".",4);
-            for (Integer i=0; i<4; i++) {
-                try{
-                    Integer int_ip = Integer.parseInt(ip_address_split_str[i]);
-                    ip_address_split_int[index] = int_ip;
-                    index ++;
-                }
-                catch (Exception e){
+        if (dots == 3) {
+            for (int i = 0; i < 4; i++) {
+                try {
+                    int intIp = Integer.parseInt(ipAddressSplitStr[i]);
+                    ipAddressSplitInt[index] = intIp;
+                    index++;
+                } catch (Exception e) {
                     return false;
                 }
             }
-        }
-        else{
+        } else {
             return false;
         }
-        for (Integer int_ip: ip_address_split_int ){
-            if (int_ip>255 || int_ip<0){
+        for (Integer intIp : ipAddressSplitInt) {
+            if (intIp > 255 || intIp < 0) {
                 return false;
             }
         }
-        return ip_address_split_int[0] != 127 && ip_address_split_int[0] >= 1 && ip_address_split_int[0] <= 223;
+        return ipAddressSplitInt[0] != 127 && ipAddressSplitInt[0] >= 1 && ipAddressSplitInt[0] <= 223;
     }
 
-    public static Boolean is_valid_subnet_mask_value(Integer value){
-        Integer[] valid_subnet_mask_values = {255,254,252,248,240,224,192,128,0};
-        for (Integer valid_value:valid_subnet_mask_values){
-            if (valid_value.equals(value)){
+    public static Boolean isValidSubnetMaskValue(Integer value) {
+        int[] VALID_SUBNET_MASK_VALUES = { 255, 254, 252, 248, 240, 224, 192, 128, 0 };
+        for (Integer validValue : VALID_SUBNET_MASK_VALUES) {
+            if (validValue.equals(value)) {
                 return true;
             }
         }
         return false;
     }
 
-    public static Boolean is_valid_subnet_mask(String subnet_mask, String ip_class){
-        Integer dots = 0;
+    public static Boolean isValidSubnetMask(String subnetMask, String ipClass) {
+        int dots = 0;
 
-        for (Integer i=0; i<subnet_mask.length(); i++) {
-            if (subnet_mask.charAt(i)=='.') {
+        for (int i = 0; i < subnetMask.length(); i++) {
+            if (subnetMask.charAt(i) == '.') {
                 dots++;
             }
         }
-        String[] subnet_mask_split_str = new String[4];
-        try{
-            subnet_mask_split_str = split(subnet_mask, '.',4);
-        }
-        catch (Exception e){
+        String[] subnetMaskSplitStr = new String[4];
+        try {
+            subnetMaskSplitStr = split(subnetMask, '.', 4);
+        } catch (Exception e) {
             return false;
         }
-        Integer index=0;
-        Integer[] subnet_mask_split_int  = new Integer[4];
+        int index = 0;
+        Integer[] subnetMaskSplitInt = new Integer[4];
         index = 0;
-        if (dots==3){
-            for (Integer i=0; i<4; i++) {
-                try{
-                    Integer int_sub_mask = Integer.parseInt(subnet_mask_split_str[i]);
-                    subnet_mask_split_int[index] = int_sub_mask;
-                    index ++;
-                }
-                catch (Exception e){
+        if (dots == 3) {
+            for (int i = 0; i < 4; i++) {
+                try {
+                    int intSubMask = Integer.parseInt(subnetMaskSplitStr[i]);
+                    subnetMaskSplitInt[index] = intSubMask;
+                    index++;
+                } catch (Exception e) {
                     return false;
                 }
             }
-        }
-        else{
+        } else {
             return false;
         }
-        for (Integer int_sub_mask: subnet_mask_split_int ){
-            if (int_sub_mask>255 || int_sub_mask<0){
+        for (Integer intSubMask : subnetMaskSplitInt) {
+            if (intSubMask > 255 || intSubMask < 0) {
                 return false;
             }
         }
 
-        if (ip_class.equals("C")){
-            if (subnet_mask_split_int[0]==255 && subnet_mask_split_int[1]==255 && subnet_mask_split_int[2]==255){
-                return is_valid_subnet_mask_value(subnet_mask_split_int[3]);
-            }
-            else{
+        if (ipClass.equals("C")) {
+            if (subnetMaskSplitInt[0] == 255 && subnetMaskSplitInt[1] == 255 && subnetMaskSplitInt[2] == 255) {
+                return isValidSubnetMaskValue(subnetMaskSplitInt[3]);
+            } else {
                 return false;
             }
-        }
-        else if (ip_class.equals("B")) {
-            if (subnet_mask_split_int[0]==255 && subnet_mask_split_int[1]==255) {
-                if (subnet_mask_split_int[2]==255){
-                    return is_valid_subnet_mask_value(subnet_mask_split_int[3]);
-                }
-                else return is_valid_subnet_mask_value(subnet_mask_split_int[2]) && subnet_mask_split_int[3] == 0;
-            }
-            else{
+        } else if (ipClass.equals("B")) {
+            if (subnetMaskSplitInt[0] == 255 && subnetMaskSplitInt[1] == 255) {
+                if (subnetMaskSplitInt[2] == 255) {
+                    return isValidSubnetMaskValue(subnetMaskSplitInt[3]);
+                } else
+                    return isValidSubnetMaskValue(subnetMaskSplitInt[2]) && subnetMaskSplitInt[3] == 0;
+            } else {
                 return false;
             }
-        }
-        else if (ip_class.equals("A")){
-            if (subnet_mask_split_int[0]==255){
-                if (subnet_mask_split_int[1]==255){
-                    if (subnet_mask_split_int[2]==255){
-                        return is_valid_subnet_mask_value(subnet_mask_split_int[3]);
-                    }
-                    else return is_valid_subnet_mask_value(subnet_mask_split_int[2]) && subnet_mask_split_int[3] == 0;
-                }
-                else return is_valid_subnet_mask_value(subnet_mask_split_int[1]) && subnet_mask_split_int[2] == 0 && subnet_mask_split_int[3] == 0;
-            }
-            else{
+        } else if (ipClass.equals("A")) {
+            if (subnetMaskSplitInt[0] == 255) {
+                if (subnetMaskSplitInt[1] == 255) {
+                    if (subnetMaskSplitInt[2] == 255) {
+                        return isValidSubnetMaskValue(subnetMaskSplitInt[3]);
+                    } else
+                        return isValidSubnetMaskValue(subnetMaskSplitInt[2]) && subnetMaskSplitInt[3] == 0;
+                } else
+                    return isValidSubnetMaskValue(subnetMaskSplitInt[1]) && subnetMaskSplitInt[2] == 0
+                            && subnetMaskSplitInt[3] == 0;
+            } else {
                 return false;
             }
-        }
-        else{
+        } else {
             return false;
         }
     }
 
-    public static Boolean is_valid_subnet_count(String str_subnet_count, Integer max_subnet_count){
-        Integer subnet_count ;
+    public static Boolean isValidSubnetCount(String strSubnetCount, Integer maxSubnetCount) {
+        int subnetCount;
         try {
-            subnet_count = Integer.parseInt(str_subnet_count);
-        }
-        catch (Exception e){
+            subnetCount = Integer.parseInt(strSubnetCount);
+        } catch (Exception e) {
             return false;
         }
-        return subnet_count <= max_subnet_count && subnet_count > 0;
+        return subnetCount <= maxSubnetCount && subnetCount > 0;
     }
 
-    public static Boolean is_valid_host_count(String str_host_count, Integer max_host_count){
-        Integer host_count ;
+    public static Boolean isValidHostCount(String strHostCount, Integer maxHostCount) {
+        int hostCount;
         try {
-            host_count = Integer.parseInt(str_host_count);
-        }
-        catch (Exception e){
+            hostCount = Integer.parseInt(strHostCount);
+        } catch (Exception e) {
             return false;
         }
-        return host_count + 2 <= max_host_count && host_count > 0;
+        return hostCount + 2 <= maxHostCount && hostCount > 0;
     }
 
-    public static  String get_ip_class(String ip_address){
-        Integer ip1 = Integer.parseInt(split(ip_address,'.',4 )[0]);
-        if (ip1>191){
+    public static String getIpClass(String ipAddress) {
+        int ip1 = Integer.parseInt(split(ipAddress, '.', 4)[0]);
+        if (ip1 > 191) {
             return "C";
-        } else if (ip1>127) {
+        } else if (ip1 > 127) {
             return "B";
-        }
-        else{
+        } else {
             return "A";
         }
     }
 
-    public static  boolean is_valid_ip_range_count(String str_range_count){
-        Integer int_range_count = 0;
-        try{
-              Integer.parseInt(str_range_count);
-        }
-        catch (Exception e){
+    public static boolean isValidIpRangeCount(String strRangeCount) {
+        try {
+            Integer.parseInt(strRangeCount);
+        } catch (Exception e) {
             return false;
         }
-
-        return  true;
+        return true;
     }
-
 }
