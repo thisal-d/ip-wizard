@@ -5,8 +5,8 @@
   <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" width="80">
   <h3>Calculate subnet masks and IP ranges on your Android device</h3>
   
-  [![Download APK](https://img.shields.io/badge/Download-APK-green?style=for-the-badge&logo=android&logoColor=white)](https://drive.google.com/file/d/1pdjX-uNBWMVbCVGPXBlTcFoiGPi1sywL/view?usp=drive_link)
-  [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Thisal-D/IP-Wizard)
+  [![Download APK](https://img.shields.io/badge/Download-APK-green?style=for-the-badge&logo=android&logoColor=white)](https://sourceforge.net/projects/ip-wizard)
+  [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Thisal-D/ip-wizard)
   [![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](https://opensource.org/licenses/MIT)
 </div>
 
@@ -18,14 +18,14 @@
 
 #### Dark Theme
 <div align="center">
-  <img src="https://github.com/Thisal-D/IP-Wizard/assets/93121062/d8ed70c9-6fcf-4824-9130-7abfee528111" width="45%" />
-  <img src="https://github.com/Thisal-D/IP-Wizard/assets/93121062/b83cdeda-15ec-493c-bbdb-4de48804809b" width="45%" />
+  <img src="https://github.com/Thisal-D/ip-wizard/assets/93121062/d8ed70c9-6fcf-4824-9130-7abfee528111" width="45%" />
+  <img src="https://github.com/Thisal-D/ip-wizard/assets/93121062/b83cdeda-15ec-493c-bbdb-4de48804809b" width="45%" />
 </div>
 
 #### Light Theme
 <div align="center">
-  <img src="https://github.com/Thisal-D/IP-Wizard/assets/93121062/6707b0ef-51d2-4c0d-8b80-e9272d584532" width="45%" />
-  <img src="https://github.com/Thisal-D/IP-Wizard/assets/93121062/a5d8f3c2-9a1f-48a5-a09c-1056c3908e33" width="45%" />
+  <img src="https://github.com/Thisal-D/ip-wizard/assets/93121062/6707b0ef-51d2-4c0d-8b80-e9272d584532" width="45%" />
+  <img src="https://github.com/Thisal-D/ip-wizard/assets/93121062/a5d8f3c2-9a1f-48a5-a09c-1056c3908e33" width="45%" />
 </div>
 
 ---
@@ -52,14 +52,14 @@
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/Thisal-D/IP-Wizard.git
-    cd IP-Wizard
+    git clone https://github.com/thisal-d/ip-wizard.git
+    cd ip-wizard
     ```
 
 2. **Open the Project in Android Studio:**
     - Launch Android Studio
     - Select "Open an existing Android Studio project"
-    - Navigate to the `IP-Wizard` folder and open it
+    - Navigate to the `ip-wizard` folder and open it
 
 3. **Build the Project:**
     - Go to **Build** > **Make Project** or press **Ctrl+F9**
@@ -83,7 +83,7 @@
           <sub><b>Abishak</b></sub>
         </a>
         <br />
-        <a href="https://github.com/Thisal-D/IP-Wizard/commits?author=solid-ninja" title="Code">💻</a>
+        <a href="https://github.com/Thisal-D/ip-wizard/commits?author=solid-ninja" title="Code">💻</a>
       </td>
     </tr>
   </table>
