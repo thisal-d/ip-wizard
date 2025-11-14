@@ -1,59 +1,59 @@
 [
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xhdpi_settings_foreground.png.flat",
+        "source": "com.example.ipwizard20.app-main-30:/mipmap-xhdpi/settings_foreground.png"
     },
     {
-        "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.ipwizard20.app-main-30:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xxhdpi_settings_foreground.png.flat",
+        "source": "com.example.ipwizard20.app-main-30:/mipmap-xxhdpi/settings_foreground.png"
+    },
+    {
+        "merged": "com.example.ipwizard20.app-debug-28:/xml_backup_rules.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xxxhdpi_settings_foreground.png.flat",
+        "source": "com.example.ipwizard20.app-main-30:/mipmap-xxxhdpi/settings_foreground.png"
     },
     {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-mdpi_ic_launcher.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ipwizard20.app-main-30:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.example.ipwizard20.app-debug-28:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.ipwizard20.app-debug-28:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.ipwizard20.app-debug-28:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.ipwizard20.app-debug-28:/layout_activity_main.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/layout/activity_main.xml"
     },
     {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xhdpi_settings_foreground.png.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xhdpi\\settings_foreground.png"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\layout_activity_settings.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\layout\\activity_settings.xml"
-    },
-    {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.example.ipwizard20.app-debug-28:/mipmap-hdpi_settings_foreground.png.flat",
+        "source": "com.example.ipwizard20.app-main-30:/mipmap-hdpi/settings_foreground.png"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-hdpi\\ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-mdpi\\ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-mdpi_settings_foreground.png.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-mdpi\\settings_foreground.png"
+        "merged": "com.example.ipwizard20.app-debug-28:/font_aguafina_script.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/font/aguafina_script.xml"
     },
     {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -64,32 +64,16 @@
         "source": "com.example.ipwizard20.app-main-30:/mipmap-xhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\drawable-v24\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
-    },
-    {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-mdpi/ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xxhdpi_settings_foreground.png.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xxhdpi\\settings_foreground.png"
     },
     {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.example.ipwizard20.app-debug-28:/drawable_settings_background.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/drawable/settings_background.xml"
     },
     {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -100,83 +84,39 @@
         "source": "com.example.ipwizard20.app-main-30:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-hdpi_settings_foreground.png.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-hdpi\\settings_foreground.png"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\drawable_settings_background.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\drawable\\settings_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\xml\\data_extraction_rules.xml"
-    },
-    {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-hdpi_ic_launcher.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.ipwizard20.app-debug-28:/mipmap-mdpi_settings_foreground.png.flat",
+        "source": "com.example.ipwizard20.app-main-30:/mipmap-mdpi/settings_foreground.png"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xxxhdpi_settings_foreground.png.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xxxhdpi\\settings_foreground.png"
+        "merged": "com.example.ipwizard20.app-debug-28:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-xxhdpi/ic_launcher_foreground.webp"
     },
     {
+        "merged": "com.example.ipwizard20.app-debug-28:/layout_activity_settings.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.example.ipwizard20.app-debug-28:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.ipwizard20.app-main-30:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xxhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\layout\\activity_main.xml"
     },
     {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-mdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\font_aguafina_script.xml.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\font\\aguafina_script.xml"
-    },
-    {
         "merged": "com.example.ipwizard20.app-debug-28:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
         "source": "com.example.ipwizard20.app-main-30:/mipmap-hdpi/ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-debug-28:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\KHThi\\.gradle\\daemon\\8.10.2\\com.example.ipwizard20.app-main-30:\\mipmap-hdpi\\ic_launcher_round.webp"
     }
 ]
