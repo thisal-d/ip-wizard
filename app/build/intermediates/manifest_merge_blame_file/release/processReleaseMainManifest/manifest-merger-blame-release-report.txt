@@ -2,7 +2,7 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.example.ipwizard20"
 4    android:versionCode="1"
-5    android:versionName="1.0" >
+5    android:versionName="0.0.1" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="25"
