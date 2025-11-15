@@ -4,7 +4,7 @@
             "outputFile": "com.example.ipwizard20.app-mergeReleaseResources-26:/values-da/values-da.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\KHThi\\.gradle\\caches\\8.10.2\\transforms\\9a3a396f4c715a047e661a895f24c282\\transformed\\appcompat-1.6.1\\res\\values-da\\values-da.xml",
+                    "source": "C:\\Users\\Thisal Dilmith\\.gradle\\caches\\8.10.2\\transforms\\9a3a396f4c715a047e661a895f24c282\\transformed\\appcompat-1.6.1\\res\\values-da\\values-da.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\KHThi\\.gradle\\caches\\8.10.2\\transforms\\df606ab6ecc64e8ae060e058424ec758\\transformed\\material-1.5.0\\res\\values-da\\values-da.xml",
+                    "source": "C:\\Users\\Thisal Dilmith\\.gradle\\caches\\8.10.2\\transforms\\df606ab6ecc64e8ae060e058424ec758\\transformed\\material-1.5.0\\res\\values-da\\values-da.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\KHThi\\.gradle\\caches\\8.10.2\\transforms\\adb0c0c8f407fa443cbac3480d6ddaf0\\transformed\\core-1.9.0\\res\\values-da\\values-da.xml",
+                    "source": "C:\\Users\\Thisal Dilmith\\.gradle\\caches\\8.10.2\\transforms\\adb0c0c8f407fa443cbac3480d6ddaf0\\transformed\\core-1.9.0\\res\\values-da\\values-da.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

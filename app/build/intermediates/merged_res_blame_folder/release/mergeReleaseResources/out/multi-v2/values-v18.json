@@ -4,7 +4,7 @@
             "outputFile": "com.example.ipwizard20.app-mergeReleaseResources-26:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\KHThi\\.gradle\\caches\\8.10.2\\transforms\\9a3a396f4c715a047e661a895f24c282\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",
+                    "source": "C:\\Users\\Thisal Dilmith\\.gradle\\caches\\8.10.2\\transforms\\9a3a396f4c715a047e661a895f24c282\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

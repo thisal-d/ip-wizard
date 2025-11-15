@@ -1,12 +1,12 @@
 <lint-module
     format="1"
-    dir="H:\ip-wizard\app"
+    dir="F:\ip-wizard\app"
     name=":app"
     type="APP"
     maven="IP Wizard:app:unspecified"
     agpVersion="8.8.0"
     buildFolder="build"
-    bootClassPath="C:\Users\KHThi\AppData\Local\Android\Sdk\platforms\android-33\android.jar;C:\Users\KHThi\AppData\Local\Android\Sdk\build-tools\35.0.0\core-lambda-stubs.jar"
+    bootClassPath="C:\Softwares\Android\android-sdk\platforms\android-33\android.jar;C:\Softwares\Android\android-sdk\build-tools\35.0.0\core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-33"
     neverShrinking="true">
