@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.ipwizard20'
+    namespace  'lk.thisald.ipwizard'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.ipwizard20"
+        applicationId  'lk.thisald.ipwizard'
         minSdk 25
         targetSdk 33
         versionCode 1

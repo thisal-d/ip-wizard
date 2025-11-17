@@ -1,4 +1,4 @@
-package com.example.ipwizard20;
+package lk.thisald.ipwizard;
 
 import android.content.Context;
 
