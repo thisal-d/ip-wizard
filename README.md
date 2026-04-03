@@ -1,8 +1,8 @@
-
-
-# IP Wizard
 <div align="center">
   <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" width="80">
+
+  <h1>IP Wizard</h1>
+
   <h3>Calculate subnet masks and IP ranges on your Android device</h3>
   
   [![Download APK](https://img.shields.io/badge/Download-APK-green?style=for-the-badge&logo=android&logoColor=white)](https://sourceforge.net/projects/ip-wizard)
